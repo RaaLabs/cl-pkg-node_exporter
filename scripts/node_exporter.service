@@ -1,0 +1,11 @@
+[Unit]
+Description=node exporter
+Documentation=https://github.com/RaaLabs/node_exporter
+After=network-online.target nss-lookup.target
+Requires=network-online.target nss-lookup.target
+
+[Service]
+ExecStart=/bin/bash -c '/usr/local/node_exporter/run.sh'
+
+[Install]
+WantedBy=multi-user.target
